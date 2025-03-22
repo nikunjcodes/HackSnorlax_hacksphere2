@@ -50,9 +50,9 @@ export function Navbar() {
                 Dashboard
               </Link>
               <Link
-                href="/dashboard/labs"
+                href="/dashboard/virtual-lab"
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive("/dashboard/labs")
+                  isActive("/dashboard/virtual-lab")
                     ? "text-primary"
                     : "text-muted-foreground"
                 }`}
@@ -136,7 +136,10 @@ export function Navbar() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <div className="flex items-center space-x-2">
+              <div
+                className="flex items-center space-x-2"
+                suppressHydrationWarning
+              >
                 <Link href="/auth/sign-in">
                   <Button variant="ghost">Sign In</Button>
                 </Link>

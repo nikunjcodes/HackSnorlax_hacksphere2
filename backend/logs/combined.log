@@ -91,3 +91,51 @@
 {"email":"tester2@gmail.com","level":"warn","message":"Registration failed: Email already exists","timestamp":"2025-03-22T08:39:37.936Z"}
 {"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-22T08:39:49.531Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"}
 {"level":"info","message":"User registered successfully","timestamp":"2025-03-22T08:39:49.807Z","userId":"67de7755617d9459ab8fdfb1"}
+{"ip":"::1","level":"info","message":"POST /api/auth/login","timestamp":"2025-03-22T08:52:22.287Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T08:52:22.534Z","userId":"67de7755617d9459ab8fdfb1"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T10:35:09.294Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T10:35:49.340Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T10:35:49.346Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/login","timestamp":"2025-03-22T10:41:05.522Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T10:41:14.403Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /api/auth/login","timestamp":"2025-03-22T10:44:28.122Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T10:44:28.282Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /api/auth/login","timestamp":"2025-03-22T10:47:32.833Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T10:47:32.968Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T10:48:36.084Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST //auth/login","timestamp":"2025-03-22T10:48:48.827Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST //auth/login","timestamp":"2025-03-22T10:48:57.020Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T10:49:25.064Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /auth/register","timestamp":"2025-03-22T10:49:52.355Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T10:52:43.965Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T10:52:43.972Z"}
+{"ip":"::1","level":"info","message":"POST /auth/register","timestamp":"2025-03-22T10:52:47.287Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-22T10:52:49.475Z","userId":"67de968100c2bfaeaea520f6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T10:52:49.512Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T10:52:49.758Z","userId":"67de968100c2bfaeaea520f6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T10:52:49.759Z","userId":"67de968100c2bfaeaea520f6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T10:52:49.759Z","userId":"67de968100c2bfaeaea520f6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T10:52:49.761Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T10:52:50.392Z","userId":"67de968100c2bfaeaea520f6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T10:52:50.393Z","userId":"67de968100c2bfaeaea520f6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T10:52:50.393Z","userId":"67de968100c2bfaeaea520f6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T11:08:15.281Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T11:08:15.428Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:08:16.205Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:08:16.264Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:08:16.265Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:08:16.265Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:08:16.268Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:08:16.309Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:08:16.310Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:08:16.311Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T11:17:49.332Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T11:17:49.444Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:17:49.474Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:17:49.515Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:17:49.516Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:17:49.516Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:17:49.517Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:17:49.558Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:17:49.558Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:17:49.558Z","userId":"67de4a812c44d060ef6832a6"}

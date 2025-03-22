@@ -34,7 +34,7 @@ interface RegisterData {
   specialization?: string;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 export const useAuth = create<AuthState>()(
   persist(
@@ -53,6 +53,7 @@ export const useAuth = create<AuthState>()(
             headers: {
               "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify({ email, password }),
           });
 
@@ -89,6 +90,7 @@ export const useAuth = create<AuthState>()(
             headers: {
               "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify(data),
           });
 
@@ -125,7 +127,9 @@ export const useAuth = create<AuthState>()(
             method: "POST",
             headers: {
               Authorization: `Bearer ${useAuth.getState().token}`,
+              "Content-Type": "application/json",
             },
+            credentials: "include",
           });
 
           if (!response.ok) {

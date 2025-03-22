@@ -22,7 +22,7 @@ export default function Home() {
               Testimonials
             </Link>
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4" suppressHydrationWarning>
             <Link href="/auth/sign-in">
               <Button variant="outline">Sign In</Button>
             </Link>
@@ -46,7 +46,7 @@ export default function Home() {
                     practical experiments.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-col gap-2 min-[400px]:flex-row" suppressHydrationWarning>
                   <Link href="/auth/sign-up">
                     <Button size="lg" className="gap-1.5">
                       Get Started

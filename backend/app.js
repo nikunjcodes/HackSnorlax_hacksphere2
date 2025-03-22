@@ -23,6 +23,7 @@ app.use(
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Authorization"],
   })
 );
 
@@ -38,11 +39,21 @@ app.use((req, res, next) => {
   next();
 });
 
+// Error handling middleware for auth routes
+app.use((err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    return res
+      .status(401)
+      .json({ error: "Invalid token or no token provided" });
+  }
+  next(err);
+});
+
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/labs", labRoutes);
-app.use("/api/courses", courseRoutes);
-app.use("/api/leaderboard", leaderboardRoutes);
+app.use("/auth", authRoutes);
+app.use("/labs", labRoutes);
+app.use("/courses", courseRoutes);
+app.use("/leaderboard", leaderboardRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -53,11 +64,16 @@ app.use((err, req, res, next) => {
     method: req.method,
   });
 
-  res.status(err.status || 500).json({
-    error:
-      process.env.NODE_ENV === "production"
-        ? "An unexpected error occurred"
-        : err.message,
+  // Send appropriate error response
+  const statusCode = err.status || 500;
+  const errorMessage =
+    process.env.NODE_ENV === "production"
+      ? "An unexpected error occurred"
+      : err.message;
+
+  res.status(statusCode).json({
+    error: errorMessage,
+    ...(process.env.NODE_ENV !== "production" && { stack: err.stack }),
   });
 });
 

@@ -56,24 +56,43 @@ export default function DashboardPage() {
 
     const fetchStats = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/auth/stats`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        if (!process.env.NEXT_PUBLIC_API_URL) {
+          throw new Error(
+            "API URL is not configured. Please check your environment variables."
+          );
+        }
+
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/auth/stats`;
+        console.log("Fetching stats from:", apiUrl);
+
+        const response = await fetch(apiUrl, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
 
         if (!response.ok) {
-          throw new Error("Failed to fetch statistics");
+          const errorData = await response.text();
+          console.error("API Error Response:", {
+            status: response.status,
+            statusText: response.statusText,
+            data: errorData,
+          });
+          throw new Error(
+            `Failed to fetch statistics: ${response.status} ${response.statusText}`
+          );
         }
 
         const data = await response.json();
         setStats(data);
       } catch (error) {
         console.error("Error fetching stats:", error);
-        toast.error("Failed to load dashboard statistics");
+        toast.error(
+          error instanceof Error
+            ? error.message
+            : "Failed to load dashboard statistics"
+        );
       } finally {
         setLoading(false);
       }
