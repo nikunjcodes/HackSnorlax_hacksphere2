@@ -1,0 +1,75 @@
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:01:50.575Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:01:50.582Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:02:09.233Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:02:09.239Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:03:43.195Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:03:43.203Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:07:09.838Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:07:09.845Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:07:31.222Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:07:31.227Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:18:53.343Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:18:53.349Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-21T18:19:52.038Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-21T18:19:52.304Z","userId":"67ddadc84709bdd7a6a95fe5"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-03-21T18:23:52.522Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:23:52.528Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-21T18:24:15.942Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"email":"tester@gmail.com","level":"warn","message":"Registration failed: Email already exists","timestamp":"2025-03-21T18:24:16.001Z"}
+{"level":"error","message":"MongoDB connection error: database names cannot contain the character '/'","stack":"MongoAPIError: database names cannot contain the character '/'\n    at validateDatabaseName (C:\\Users\\Nikunj\\Desktop\\projects\\ai-learning-platform\\backend\\node_modules\\mongodb\\lib\\db.js:376:19)\n    at new Db (C:\\Users\\Nikunj\\Desktop\\projects\\ai-learning-platform\\backend\\node_modules\\mongodb\\lib\\db.js:88:9)\n    at MongoClient.db (C:\\Users\\Nikunj\\Desktop\\projects\\ai-learning-platform\\backend\\node_modules\\mongodb\\lib\\mongo_client.js:255:20)\n    at _setClient (C:\\Users\\Nikunj\\Desktop\\projects\\ai-learning-platform\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:337:58)\n    at NativeConnection.createClient (C:\\Users\\Nikunj\\Desktop\\projects\\ai-learning-platform\\backend\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\connection.js:298:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async NativeConnection.openUri (C:\\Users\\Nikunj\\Desktop\\projects\\ai-learning-platform\\backend\\node_modules\\mongoose\\lib\\connection.js:789:5)","timestamp":"2025-03-21T18:27:08.370Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-21T18:29:29.308Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:29:29.314Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-21T18:29:34.883Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:29:34.889Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-21T18:29:36.321Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-21T18:29:36.517Z","userId":"67ddb0105e9ed0848d8da494"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-21T18:31:19.822Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:31:19.828Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-21T18:32:06.759Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:32:06.765Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-21T18:32:15.330Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:32:15.337Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-21T18:36:20.427Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-21T18:36:20.810Z","userId":"67ddb1a442802be316c2c61f"}
+{"ip":"::1","level":"info","message":"GET /api/auth/stats","timestamp":"2025-03-21T18:36:20.853Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-21T18:36:20.910Z","userId":"67ddb1a442802be316c2c61f"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-21T18:36:20.912Z","userId":"67ddb1a442802be316c2c61f"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-21T18:36:20.913Z","userId":"67ddb1a442802be316c2c61f"}
+{"ip":"::1","level":"info","message":"GET /api/auth/stats","timestamp":"2025-03-21T18:36:20.915Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-21T18:36:21.014Z","userId":"67ddb1a442802be316c2c61f"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-21T18:36:21.015Z","userId":"67ddb1a442802be316c2c61f"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-21T18:36:21.015Z","userId":"67ddb1a442802be316c2c61f"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-21T18:41:48.503Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-21T18:41:48.510Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T05:07:26.777Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T05:07:26.783Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-22T05:09:36.902Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-22T05:09:37.302Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /api/auth/stats","timestamp":"2025-03-22T05:09:39.651Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T05:09:39.756Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T05:09:39.757Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T05:09:39.758Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /api/auth/stats","timestamp":"2025-03-22T05:09:39.760Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T05:09:39.842Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T05:09:39.843Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T05:09:39.843Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T05:27:45.792Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T05:27:45.798Z"}
+{"ip":"::1","level":"info","message":"POST /api/auth/register","timestamp":"2025-03-22T05:28:33.405Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-22T05:28:33.670Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /api/auth/stats","timestamp":"2025-03-22T05:28:34.559Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T05:28:34.689Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T05:28:34.690Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T05:28:34.691Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /api/auth/stats","timestamp":"2025-03-22T05:28:34.693Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T05:28:34.753Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T05:28:34.753Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T05:28:34.754Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /api/leaderboard/global?timeframe=all&category=Overall","timestamp":"2025-03-22T05:28:38.446Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T05:28:38.516Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"all","timestamp":"2025-03-22T05:28:38.634Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /api/leaderboard/global?timeframe=all&category=Overall","timestamp":"2025-03-22T05:28:38.698Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T05:28:38.751Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"all","timestamp":"2025-03-22T05:28:38.876Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T05:42:13.930Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T05:42:13.938Z"}
