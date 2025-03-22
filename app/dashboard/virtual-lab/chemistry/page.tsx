@@ -8,43 +8,36 @@ import {
   ChevronLeft,
   ChevronRight,
   Beaker,
-  Atom,
-  Binary,
-  FunctionSquare,
+  FlaskConical,
+  Waves,
+  Combine,
 } from "lucide-react"
 
-const labs = [
+const experiments = [
   {
-    id: "physics",
-    title: "Physics Lab",
-    description: "Explore quantum mechanics and wave functions",
-    icon: Atom,
-    experiments: ["Quantum Mechanics", "Wave Functions", "Particle Physics"],
-  },
-  {
-    id: "chemistry",
-    title: "Chemistry Lab",
-    description: "Study chemical reactions and molecular behavior",
+    id: "acid-base",
+    title: "Acid-Base Reactions",
+    description: "Study pH changes, indicators, and titration curves",
     icon: Beaker,
-    experiments: ["Acid-Base Reactions", "Redox Reactions", "Precipitation"],
+    topics: ["pH Scale", "Indicators", "Titration", "Buffer Solutions"],
   },
   {
-    id: "mathematics",
-    title: "Mathematics Lab",
-    description: "Explore mathematical concepts through interactive visualizations",
-    icon: FunctionSquare,
-    experiments: ["3D Function Visualization", "Differential Equations", "Linear Algebra"],
+    id: "redox",
+    title: "Redox Reactions",
+    description: "Explore electron transfer and cell potentials",
+    icon: FlaskConical,
+    topics: ["Oxidation States", "Cell Potentials", "Electrochemistry", "Galvanic Cells"],
   },
   {
-    id: "computer-science",
-    title: "Computer Science Lab",
-    description: "Practice algorithms and data structures",
-    icon: Binary,
-    experiments: ["Algorithms", "Data Structures", "Machine Learning"],
+    id: "precipitation",
+    title: "Precipitation Reactions",
+    description: "Investigate solubility and precipitate formation",
+    icon: Waves,
+    topics: ["Solubility Rules", "Ksp Calculations", "Double Displacement", "Crystal Formation"],
   },
 ]
 
-export default function VirtualLabPage() {
+export default function ChemistryLabPage() {
   const router = useRouter()
 
   return (
@@ -56,22 +49,22 @@ export default function VirtualLabPage() {
               variant="outline" 
               size="icon" 
               className="h-8 w-8"
-              onClick={() => router.push("/dashboard")}
+              onClick={() => router.push("/dashboard/virtual-lab")}
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <h1 className="text-2xl font-bold tracking-tight">Virtual Lab</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Chemistry Lab</h1>
             <Badge className="ml-2">Interactive</Badge>
           </div>
-          <p className="text-muted-foreground">Select a lab to begin experimenting</p>
+          <p className="text-muted-foreground">Select an experiment to begin</p>
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-        {labs.map((lab) => {
-          const Icon = lab.icon
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {experiments.map((experiment) => {
+          const Icon = experiment.icon
           return (
-            <Card key={lab.id} className="flex flex-col">
+            <Card key={experiment.id} className="flex flex-col">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2">
@@ -79,18 +72,18 @@ export default function VirtualLabPage() {
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <CardTitle>{lab.title}</CardTitle>
-                      <CardDescription>{lab.description}</CardDescription>
+                      <CardTitle>{experiment.title}</CardTitle>
+                      <CardDescription>{experiment.description}</CardDescription>
                     </div>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="space-y-2">
-                  <h4 className="text-sm font-medium">Available Experiments:</h4>
+                  <h4 className="text-sm font-medium">Topics Covered:</h4>
                   <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                    {lab.experiments.map((experiment, index) => (
-                      <li key={index}>{experiment}</li>
+                    {experiment.topics.map((topic, index) => (
+                      <li key={index}>{topic}</li>
                     ))}
                   </ul>
                 </div>
@@ -98,7 +91,7 @@ export default function VirtualLabPage() {
               <CardFooter>
                 <Button 
                   className="w-full gap-2" 
-                  onClick={() => router.push(`/dashboard/virtual-lab/${lab.id}`)}
+                  onClick={() => router.push(`/dashboard/virtual-lab/chemistry/${experiment.id}`)}
                 >
                   Enter Lab
                   <ChevronRight className="h-4 w-4" />
@@ -110,5 +103,4 @@ export default function VirtualLabPage() {
       </div>
     </div>
   )
-}
-
+} 
