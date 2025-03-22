@@ -36,11 +36,8 @@ import {
 import { GoogleGenerativeAI, GenerativeModel } from "@google/generative-ai";
 import { toast } from "sonner";
 
-// Chemistry context for better responses
 const CHEMISTRY_CONTEXT = `You are an expert chemistry tutor specializing in acid-base reactions and pH calculations. 
 Help students understand concepts like pH scale, strong vs weak acids, buffers, and indicators.`;
-
-// Initialize Gemini API with error handling
 const initializeGeminiAI = () => {
   const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 

@@ -1,5 +1,4 @@
 "use client";
-
 import { useCallback, useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,12 +13,12 @@ import {
   Eye,
   EyeOff,
   Trophy,
+  BookOpen,
+  X,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import type ProjectileSimulation from "./simulation";
-
-// Import simulation component with no SSR
 const ProjectileSimulationComponent = dynamic(
   () => import("./ProjectileSimulationComponent"),
   { ssr: false }
@@ -33,6 +32,7 @@ export default function ProjectileMotionLabPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [targetHits, setTargetHits] = useState(0);
   const [challengeMode, setChallengeMode] = useState(false);
+  const [showTheory, setShowTheory] = useState(false);
   const [challengeState, setChallengeState] = useState({
     score: 0,
     targetsHit: 0,
@@ -62,7 +62,6 @@ export default function ProjectileMotionLabPage() {
     []
   );
 
-  // Handle simulation controls
   const handleLaunch = () => {
     if (!simulationRef.current) return;
     if (isLaunched) {
@@ -88,7 +87,6 @@ export default function ProjectileMotionLabPage() {
 
   const handleToggleChallenge = () => {
     if (!simulationRef.current) return;
-
     if (!challengeMode) {
       simulationRef.current.startChallengeMode();
       setChallengeMode(true);
@@ -123,7 +121,10 @@ export default function ProjectileMotionLabPage() {
     simulationRef.current.setWindSpeed(values[0]);
   };
 
-  // Update challenge state every second
+  const handleToggleTheory = () => {
+    setShowTheory(!showTheory);
+  };
+
   useEffect(() => {
     if (challengeMode && simulationRef.current) {
       const interval = setInterval(() => {
@@ -136,7 +137,6 @@ export default function ProjectileMotionLabPage() {
           });
         }
       }, 1000);
-
       return () => clearInterval(interval);
     }
   }, [challengeMode]);
@@ -156,6 +156,15 @@ export default function ProjectileMotionLabPage() {
           <Badge variant="secondary">Interactive</Badge>
         </div>
         <div className="flex items-center gap-4">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleToggleTheory}
+            className="flex items-center gap-1"
+          >
+            <BookOpen className="h-4 w-4" />
+            Theory
+          </Button>
           {challengeMode ? (
             <>
               <Badge variant="secondary" className="text-lg">
@@ -175,6 +184,170 @@ export default function ProjectileMotionLabPage() {
           )}
         </div>
       </div>
+
+      {showTheory && (
+        <Card className="relative">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-4 top-4"
+            onClick={handleToggleTheory}
+          >
+            <X className="h-4 w-4" />
+          </Button>
+          <CardHeader>
+            <CardTitle>Theory of Projectile Motion</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">
+                  Fundamental Principles
+                </h3>
+                <p>
+                  Projectile motion describes the path of an object launched
+                  into the air and subject to gravitational acceleration. The
+                  motion can be analyzed as two independent components:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong>Horizontal motion:</strong> Constant velocity motion
+                    (assuming no air resistance)
+                  </li>
+                  <li>
+                    <strong>Vertical motion:</strong> Constantly accelerated
+                    motion due to gravity
+                  </li>
+                </ul>
+                <p>
+                  The key insight is that these components are independent of
+                  each other. The horizontal distance traveled depends only on
+                  the horizontal component of velocity and time, while the
+                  vertical position depends on the vertical component of
+                  velocity, time, and gravitational acceleration.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Key Equations</h3>
+                <div className="space-y-2">
+                  <p>
+                    <strong>Initial velocity components:</strong>
+                  </p>
+                  <p>
+                    v<sub>x</sub> = v<sub>0</sub> cos(θ)
+                  </p>
+                  <p>
+                    v<sub>y</sub> = v<sub>0</sub> sin(θ)
+                  </p>
+
+                  <p className="mt-2">
+                    <strong>Position as a function of time:</strong>
+                  </p>
+                  <p>
+                    x(t) = x<sub>0</sub> + v<sub>x</sub>t
+                  </p>
+                  <p>
+                    y(t) = y<sub>0</sub> + v<sub>y</sub>t - ½gt²
+                  </p>
+
+                  <p className="mt-2">
+                    <strong>Key trajectory parameters:</strong>
+                  </p>
+                  <p>
+                    Range (R) = (v<sub>0</sub>² sin(2θ))/g
+                  </p>
+                  <p>
+                    Maximum height (H) = (v<sub>0</sub>² sin²(θ))/(2g)
+                  </p>
+                  <p>
+                    Time of flight (T) = (2v<sub>0</sub> sin(θ))/g
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4 mt-2">
+              <h3 className="text-lg font-semibold">
+                Real-World Considerations
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-medium">Air Resistance Effects</h4>
+                  <p>
+                    Air resistance applies a force opposite to the direction of
+                    motion, proportional to:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-1 mt-2">
+                    <li>Velocity (often modeled as proportional to v or v²)</li>
+                    <li>Cross-sectional area of the projectile</li>
+                    <li>Air density</li>
+                    <li>Drag coefficient (shape-dependent)</li>
+                  </ul>
+                  <p className="mt-2">
+                    Air resistance reduces both range and maximum height
+                    compared to idealized predictions.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-medium">Additional Factors</h4>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Wind:</strong> Adds or subtracts from horizontal
+                      velocity component
+                    </li>
+                    <li>
+                      <strong>Mass:</strong> Affects the projectile's response
+                      to air resistance (but not its ideal trajectory)
+                    </li>
+                    <li>
+                      <strong>Spin:</strong> Creates the Magnus effect, causing
+                      curved trajectories
+                    </li>
+                    <li>
+                      <strong>Altitude:</strong> Changes in air density affect
+                      drag forces
+                    </li>
+                    <li>
+                      <strong>Earth's curvature:</strong> Becomes relevant for
+                      extremely long-range projectiles
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 border-t pt-4">
+              <h3 className="text-lg font-semibold">
+                Experimental Verification
+              </h3>
+              <p>
+                In this interactive lab, you can test these principles by
+                adjusting launch parameters and observing the resultant
+                trajectories. Key relationships to verify include:
+              </p>
+              <ul className="list-disc pl-6 mt-2">
+                <li>
+                  Maximum range occurs at a 45° launch angle (in vacuum
+                  conditions)
+                </li>
+                <li>
+                  Complementary angles (e.g., 30° and 60°) produce equal ranges
+                  in vacuum
+                </li>
+                <li>
+                  Air resistance causes the optimal angle to be less than 45°
+                  for maximum range
+                </li>
+                <li>
+                  Higher mass projectiles are less affected by air resistance
+                </li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1">
         {/* Simulation Canvas */}
@@ -242,7 +415,6 @@ export default function ProjectileMotionLabPage() {
                     onValueChange={handleAngleChange}
                   />
                 </div>
-
                 <div className="space-y-2">
                   <label className="text-sm font-medium">
                     Initial Velocity (m/s)
@@ -255,7 +427,6 @@ export default function ProjectileMotionLabPage() {
                     onValueChange={handleVelocityChange}
                   />
                 </div>
-
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Mass (kg)</label>
                   <Slider
@@ -266,7 +437,6 @@ export default function ProjectileMotionLabPage() {
                     onValueChange={handleMassChange}
                   />
                 </div>
-
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Air Resistance</label>
                   <Slider
@@ -277,7 +447,6 @@ export default function ProjectileMotionLabPage() {
                     onValueChange={handleAirResistanceChange}
                   />
                 </div>
-
                 <div className="space-y-2">
                   <label className="text-sm font-medium">
                     Wind Speed (m/s)

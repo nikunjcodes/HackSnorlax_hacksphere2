@@ -175,3 +175,303 @@
 {"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:51:28.984Z","userId":"67de4a812c44d060ef6832a6"}
 {"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:51:28.985Z","userId":"67de4a812c44d060ef6832a6"}
 {"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:51:28.985Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T11:54:53.920Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T11:54:54.157Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:54:55.161Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:54:55.326Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:54:55.327Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:54:55.328Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:54:55.329Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:54:55.428Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:54:55.429Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:54:55.430Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /api/auth/leaderboard?timeframe=total&category=total","timestamp":"2025-03-22T11:54:58.181Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"GET /api/auth/leaderboard?timeframe=total&category=total","timestamp":"2025-03-22T11:54:58.184Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:56:05.422Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:56:05.575Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:56:05.577Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:56:05.578Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:56:05.580Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:56:05.676Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:56:05.677Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:56:05.678Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T11:56:17.799Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T11:56:17.807Z"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T11:58:05.900Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T11:58:05.907Z"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T11:58:13.307Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:58:13.473Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T11:58:13.786Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T11:58:13.794Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:58:13.886Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T11:58:14.194Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T11:59:56.116Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T11:59:56.330Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:59:56.404Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:59:56.473Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:59:56.474Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:59:56.474Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T11:59:56.477Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:59:56.582Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T11:59:56.583Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T11:59:56.584Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T11:59:58.189Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:59:58.246Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T11:59:58.409Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T11:59:58.413Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T11:59:58.467Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T11:59:58.638Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:02:27.788Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:02:27.845Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:02:28.026Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:02:28.029Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:02:28.088Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:02:28.289Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T12:03:32.452Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T12:03:32.682Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:03:32.755Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:03:32.871Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:03:32.872Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:03:32.873Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:03:32.875Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:03:32.974Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:03:32.975Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:03:32.976Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/me","timestamp":"2025-03-22T12:03:34.962Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:03:35.124Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:03:35.237Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:03:35.329Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:03:35.330Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:03:35.331Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:03:52.356Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:03:52.411Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:03:52.581Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:03:52.583Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:03:52.641Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:03:52.810Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:09.990Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:09.994Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.066Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.071Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":300,"timestamp":"2025-03-22T12:04:10.204Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":300,"timestamp":"2025-03-22T12:04:10.207Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:10.209Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:10.217Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.255Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.266Z","userId":"67de4a812c44d060ef6832a6"}
+{"error":"User validation failed: achievements.0.type: `Speed Runner` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:04:10.325Z"}
+{"error":"User validation failed: achievements.0.type: `Speed Runner` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:04:10.330Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:10.333Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:10.351Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.379Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.398Z","userId":"67de4a812c44d060ef6832a6"}
+{"error":"User validation failed: achievements.0.type: `Perfect Balance` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:04:10.438Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:10.443Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"error":"User validation failed: achievements.0.type: `Perfect Balance` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:04:10.449Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:04:10.469Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.490Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:10.517Z","userId":"67de4a812c44d060ef6832a6"}
+{"error":"User validation failed: achievements.0.type: `Master of Elements` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:04:10.540Z"}
+{"error":"User validation failed: achievements.0.type: `Master of Elements` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:04:10.576Z"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:04:22.519Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:22.618Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:04:22.948Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:04:22.951Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:04:23.050Z","userId":"67de4a812c44d060ef6832a6"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:04:23.356Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:06:39.984Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:06:40.168Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:06:40.169Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:06:40.169Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:06:40.172Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:06:40.269Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:06:40.271Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:06:40.271Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/logout","timestamp":"2025-03-22T12:06:43.785Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:06:43.956Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User logged out successfully","timestamp":"2025-03-22T12:06:43.957Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T12:06:58.496Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T12:06:58.711Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:06:58.759Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:06:58.907Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:06:58.908Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:06:58.909Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:06:58.911Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:06:59.010Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:06:59.010Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:06:59.011Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/me","timestamp":"2025-03-22T12:13:09.463Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:13:09.606Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T12:13:17.566Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T12:13:17.784Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:13:17.977Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:13:18.106Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:13:18.107Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:13:18.107Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:13:18.109Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:13:18.193Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:13:18.194Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:13:18.194Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/me","timestamp":"2025-03-22T12:16:07.748Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:16:07.890Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T12:28:53.873Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T12:28:54.085Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:28:54.171Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:28:54.279Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:28:54.280Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:28:54.280Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:28:54.282Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:28:54.380Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:28:54.381Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:28:54.381Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:28:59.158Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:28:59.298Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:29:00.012Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:29:00.014Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:00.114Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:29:00.429Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.208Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.211Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:37.286Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:37.289Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":300,"timestamp":"2025-03-22T12:29:37.490Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.497Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":300,"timestamp":"2025-03-22T12:29:37.503Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.507Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:37.559Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:37.561Z","userId":"67de46106f75153166fe08ae"}
+{"error":"User validation failed: achievements.0.type: `Speed Runner` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:29:37.706Z"}
+{"error":"User validation failed: achievements.0.type: `Speed Runner` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:29:37.711Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.714Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.728Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:37.798Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:37.799Z","userId":"67de46106f75153166fe08ae"}
+{"error":"User validation failed: achievements.0.type: `Perfect Balance` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:29:37.902Z"}
+{"error":"User validation failed: achievements.0.type: `Perfect Balance` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:29:37.905Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.907Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:37.923Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:38.002Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:38.005Z","userId":"67de46106f75153166fe08ae"}
+{"error":"User validation failed: achievements.0.type: `Master of Elements` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:29:38.106Z"}
+{"error":"User validation failed: achievements.0.type: `Master of Elements` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:29:38.110Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:51.319Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:29:51.323Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:51.417Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:29:51.420Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":300,"timestamp":"2025-03-22T12:29:51.623Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":300,"timestamp":"2025-03-22T12:29:51.625Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:30:02.308Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:30:02.476Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:30:02.784Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:30:02.787Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:30:02.886Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:30:03.195Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:03.327Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:03.330Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:03.406Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:03.408Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":200,"timestamp":"2025-03-22T12:31:03.611Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":200,"timestamp":"2025-03-22T12:31:03.613Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:03.615Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:03.622Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:03.671Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:03.674Z","userId":"67de46106f75153166fe08ae"}
+{"error":"User validation failed: achievements.0.type: `Speed Runner` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:31:03.818Z"}
+{"error":"User validation failed: achievements.0.type: `Speed Runner` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:31:03.822Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:25.711Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:25.716Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:25.833Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:25.836Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":200,"timestamp":"2025-03-22T12:31:26.037Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":200,"timestamp":"2025-03-22T12:31:26.039Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:34.859Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:34.863Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:34.947Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:34.950Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":292,"timestamp":"2025-03-22T12:31:35.151Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Chemistry","level":"info","message":"Points updated successfully","points":292,"timestamp":"2025-03-22T12:31:35.153Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:35.156Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:35.162Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:35.254Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:35.256Z","userId":"67de46106f75153166fe08ae"}
+{"error":"User validation failed: achievements.0.type: `Perfect Balance` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:31:35.366Z"}
+{"error":"User validation failed: achievements.0.type: `Perfect Balance` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:31:35.369Z"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:35.371Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"POST /leaderboard/update-points","timestamp":"2025-03-22T12:31:35.389Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:35.458Z","userId":"67de46106f75153166fe08ae"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:35.460Z","userId":"67de46106f75153166fe08ae"}
+{"error":"User validation failed: achievements.0.type: `Master of Elements` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:31:35.545Z"}
+{"error":"User validation failed: achievements.0.type: `Master of Elements` is not a valid enum value for path `type`.","level":"error","message":"Error updating points:","timestamp":"2025-03-22T12:31:35.548Z"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:31:41.398Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:41.500Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:31:41.808Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:31:41.811Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:31:41.911Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:31:42.218Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:33:42.951Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:33:43.054Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:33:43.371Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"GET /leaderboard/global?timeframe=total&category=Overall&page=1","timestamp":"2025-03-22T12:33:43.375Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:33:43.464Z","userId":"67de46106f75153166fe08ae"}
+{"category":"Overall","level":"info","message":"Leaderboard fetched successfully","timeframe":"total","timestamp":"2025-03-22T12:33:43.729Z","userId":"67de46106f75153166fe08ae"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T12:47:43.897Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T12:47:44.713Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:47:46.324Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:47:46.446Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:47:46.447Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:47:46.447Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T12:47:46.449Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:47:46.548Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T12:47:46.549Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T12:47:46.550Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/logout","timestamp":"2025-03-22T12:50:12.579Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T12:50:15.909Z","userId":"67de4a812c44d060ef6832a6"}
+{"level":"info","message":"User logged out successfully","timestamp":"2025-03-22T12:50:15.909Z","userId":"67de4a812c44d060ef6832a6"}
+{"ip":"::1","level":"info","message":"POST /auth/register","timestamp":"2025-03-22T13:02:50.502Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User registered successfully","timestamp":"2025-03-22T13:02:50.715Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T13:02:51.148Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:02:51.211Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T13:02:51.212Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T13:02:51.212Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T13:02:51.214Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:02:51.268Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T13:02:51.268Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T13:02:51.268Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"POST /auth/logout","timestamp":"2025-03-22T13:02:59.444Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:02:59.501Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User logged out successfully","timestamp":"2025-03-22T13:02:59.502Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T13:05:00.993Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T13:05:01.132Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T13:05:01.164Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:05:01.231Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T13:05:01.231Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T13:05:01.231Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T13:05:01.233Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:05:01.295Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T13:05:01.295Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T13:05:01.296Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"POST /auth/logout","timestamp":"2025-03-22T13:05:05.015Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:05:05.075Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User logged out successfully","timestamp":"2025-03-22T13:05:05.076Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T13:12:30.992Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T13:12:31.138Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T13:12:31.244Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:12:31.303Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T13:12:31.304Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T13:12:31.304Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T13:12:31.305Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T13:12:31.363Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T13:12:31.363Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T13:12:31.363Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Connected to MongoDB ai-lab database successfully","timestamp":"2025-03-22T14:22:51.439Z"}
+{"level":"info","message":"Server is running on port 5000","timestamp":"2025-03-22T14:22:51.445Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"POST /auth/login","timestamp":"2025-03-22T14:24:15.691Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"}
+{"level":"info","message":"User logged in successfully","timestamp":"2025-03-22T14:24:15.890Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T14:24:16.807Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T14:24:16.941Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T14:24:16.942Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T14:24:16.943Z","userId":"67deb4faa7c9b2822be7c498"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /auth/stats","timestamp":"2025-03-22T14:24:16.946Z","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"}
+{"level":"info","message":"User authenticated successfully","role":"student","timestamp":"2025-03-22T14:24:17.045Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"Fetching user statistics","timestamp":"2025-03-22T14:24:17.045Z","userId":"67deb4faa7c9b2822be7c498"}
+{"level":"info","message":"User statistics fetched successfully","timestamp":"2025-03-22T14:24:17.045Z","userId":"67deb4faa7c9b2822be7c498"}

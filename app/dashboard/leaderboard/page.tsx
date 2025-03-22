@@ -12,7 +12,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Trophy, ArrowUp, ArrowDown } from "lucide-react";
+import {
+  Trophy,
+  ArrowUp,
+  Medal,
+  School,
+  Star,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+interface Achievement {
+  title: string;
+  description: string;
+  dateEarned: string;
+  type: string;
+}
 
 interface UserPoints {
   total: number;
@@ -30,10 +46,19 @@ interface LeaderboardUser {
   _id: string;
   name: string;
   institution: string;
-  points: UserPoints;
-  rank: number;
-  avatar?: string;
   specialization?: string;
+  avatar?: string;
+  rank: number;
+  points: UserPoints;
+  achievements: Achievement[];
+}
+
+interface LeaderboardResponse {
+  users: LeaderboardUser[];
+  userRank: number;
+  currentPage: number;
+  totalPages: number;
+  totalUsers: number;
 }
 
 export default function LeaderboardPage() {
@@ -41,12 +66,18 @@ export default function LeaderboardPage() {
   const [users, setUsers] = useState<LeaderboardUser[]>([]);
   const [loading, setLoading] = useState(true);
   const [timeframe, setTimeframe] = useState("total");
-  const [category, setCategory] = useState("total");
+  const [category, setCategory] = useState("Overall");
+  const [view, setView] = useState<"global" | "institution">("global");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [userRank, setUserRank] = useState(0);
 
   const fetchLeaderboard = async () => {
     try {
+      setLoading(true);
+      const endpoint = view === "global" ? "global" : "institution";
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/leaderboard?timeframe=${timeframe}&category=${category}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/leaderboard/${endpoint}?timeframe=${timeframe}&category=${category}&page=${currentPage}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -55,8 +86,10 @@ export default function LeaderboardPage() {
       );
 
       if (!response.ok) throw new Error("Failed to fetch leaderboard");
-      const data = await response.json();
+      const data: LeaderboardResponse = await response.json();
       setUsers(data.users);
+      setUserRank(data.userRank);
+      setTotalPages(data.totalPages);
     } catch (error) {
       console.error("Error fetching leaderboard:", error);
     } finally {
@@ -68,15 +101,30 @@ export default function LeaderboardPage() {
     if (token) {
       fetchLeaderboard();
     }
-  }, [token, timeframe, category]);
+  }, [token, timeframe, category, view, currentPage]);
 
   const getPointsDisplay = (user: LeaderboardUser) => {
-    if (category === "total") {
+    if (category === "Overall") {
       return user.points[timeframe as keyof Omit<UserPoints, "categoryPoints">];
     }
     return user.points.categoryPoints[
-      category as keyof UserPoints["categoryPoints"]
+      category
+        .toLowerCase()
+        .replace(/\s+/g, "") as keyof UserPoints["categoryPoints"]
     ];
+  };
+
+  const getAchievementIcon = (type: string) => {
+    switch (type) {
+      case "course":
+        return <School className="h-4 w-4" />;
+      case "experiment":
+        return <Star className="h-4 w-4" />;
+      case "excellence":
+        return <Medal className="h-4 w-4" />;
+      default:
+        return <Trophy className="h-4 w-4" />;
+    }
   };
 
   if (loading) {
@@ -88,16 +136,27 @@ export default function LeaderboardPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Leaderboard</h1>
-          <p className="text-muted-foreground">
-            Your Rank: #{user?.rank || "N/A"}
-          </p>
+          <p className="text-muted-foreground">Your Rank: #{userRank}</p>
         </div>
 
         <div className="flex gap-4">
+          <Select
+            value={view}
+            onValueChange={(v) => setView(v as "global" | "institution")}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select View" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="global">Global</SelectItem>
+              <SelectItem value="institution">Institution</SelectItem>
+            </SelectContent>
+          </Select>
+
           <Select value={timeframe} onValueChange={setTimeframe}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select Timeframe" />
@@ -114,11 +173,11 @@ export default function LeaderboardPage() {
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="total">Overall</SelectItem>
-              <SelectItem value="physics">Physics</SelectItem>
-              <SelectItem value="chemistry">Chemistry</SelectItem>
-              <SelectItem value="biology">Biology</SelectItem>
-              <SelectItem value="computerScience">Computer Science</SelectItem>
+              <SelectItem value="Overall">Overall</SelectItem>
+              <SelectItem value="Physics">Physics</SelectItem>
+              <SelectItem value="Chemistry">Chemistry</SelectItem>
+              <SelectItem value="Biology">Biology</SelectItem>
+              <SelectItem value="Computer Science">Computer Science</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -126,7 +185,9 @@ export default function LeaderboardPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Top Performers</CardTitle>
+          <CardTitle>
+            {view === "global" ? "Global Rankings" : "Institution Rankings"}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -141,7 +202,7 @@ export default function LeaderboardPage() {
               >
                 <div className="flex items-center gap-4">
                   <div className="flex items-center justify-center w-8 text-xl font-bold">
-                    {index + 1}
+                    {user.rank}
                   </div>
                   <Avatar className="h-12 w-12">
                     <AvatarImage src={user.avatar} />
@@ -157,6 +218,23 @@ export default function LeaderboardPage() {
                     <p className="text-sm text-muted-foreground">
                       {user.institution} • {user.specialization}
                     </p>
+                    <div className="flex gap-1 mt-1">
+                      {user.achievements.slice(0, 3).map((achievement, i) => (
+                        <Badge
+                          key={i}
+                          variant="secondary"
+                          className="flex items-center gap-1"
+                        >
+                          {getAchievementIcon(achievement.type)}
+                          {achievement.title}
+                        </Badge>
+                      ))}
+                      {user.achievements.length > 3 && (
+                        <Badge variant="outline">
+                          +{user.achievements.length - 3}
+                        </Badge>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -179,6 +257,29 @@ export default function LeaderboardPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Pagination */}
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <span className="text-sm">
+              Page {currentPage} of {totalPages}
+            </span>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
           </div>
         </CardContent>
       </Card>

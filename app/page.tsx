@@ -1,6 +1,13 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Lightbulb, Zap, Trophy, Users, BookOpen } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  ChevronRight,
+  Lightbulb,
+  Zap,
+  Trophy,
+  Users,
+  BookOpen,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -12,13 +19,22 @@ export default function Home() {
             <span className="text-xl font-bold">EduAI Lab</span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="#features" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#features"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Features
             </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#how-it-works"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               How It Works
             </Link>
-            <Link href="#testimonials" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link
+              href="#testimonials"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
               Testimonials
             </Link>
           </nav>
@@ -42,11 +58,14 @@ export default function Home() {
                     Revolutionize Learning with AI-Powered Labs
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Personalized learning paths, real-time feedback, and an AI virtual mentor to guide you through
-                    practical experiments.
+                    Personalized learning paths, real-time feedback, and an AI
+                    virtual mentor to guide you through practical experiments.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row" suppressHydrationWarning>
+                <div
+                  className="flex flex-col gap-2 min-[400px]:flex-row"
+                  suppressHydrationWarning
+                >
                   <Link href="/auth/sign-up">
                     <Button size="lg" className="gap-1.5">
                       Get Started
@@ -63,7 +82,7 @@ export default function Home() {
               <div className="mx-auto lg:mx-0 relative">
                 <div className="relative h-[350px] w-full overflow-hidden rounded-xl bg-muted shadow-lg">
                   <img
-                    src="/placeholder.svg?height=350&width=600"
+                    src="https://static.vecteezy.com/system/resources/previews/010/880/383/non_2x/person-scientist-people-artificial-intelligence-concept-illustration-character-target-check-ai-laboratory-science-experiment-lab-working-job-smart-business-team-human-discovery-art-vector.jpg"
                     alt="AI-powered virtual lab interface"
                     className="object-cover w-full h-full"
                   />
@@ -77,9 +96,12 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Key Features</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Key Features
+                </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Our platform combines cutting-edge AI with proven educational methodologies
+                  Our platform combines cutting-edge AI with proven educational
+                  methodologies
                 </p>
               </div>
             </div>
@@ -90,7 +112,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">AI-Driven Personalization</h3>
                 <p className="text-center text-muted-foreground">
-                  Tracks progress and adjusts difficulty based on your learning style and pace
+                  Tracks progress and adjusts difficulty based on your learning
+                  style and pace
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
@@ -99,7 +122,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">Live Doubt Resolution</h3>
                 <p className="text-center text-muted-foreground">
-                  Real-time screen sharing and mentor assistance when you need help
+                  Real-time screen sharing and mentor assistance when you need
+                  help
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
@@ -126,7 +150,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">Real-World Scenarios</h3>
                 <p className="text-center text-muted-foreground">
-                  EDP practical-based learning that connects theory to industry applications
+                  EDP practical-based learning that connects theory to industry
+                  applications
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
@@ -150,7 +175,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">Data-Driven Insights</h3>
                 <p className="text-center text-muted-foreground">
-                  Optimize your learning path with AI-powered analytics and recommendations
+                  Optimize your learning path with AI-powered analytics and
+                  recommendations
                 </p>
               </div>
             </div>
@@ -164,10 +190,16 @@ export default function Home() {
             <span className="text-lg font-semibold">EduAI Lab</span>
           </div>
           <nav className="flex gap-4 sm:gap-6">
-            <Link href="#" className="text-xs hover:underline underline-offset-4 sm:text-sm">
+            <Link
+              href="#"
+              className="text-xs hover:underline underline-offset-4 sm:text-sm"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="text-xs hover:underline underline-offset-4 sm:text-sm">
+            <Link
+              href="#"
+              className="text-xs hover:underline underline-offset-4 sm:text-sm"
+            >
               Privacy
             </Link>
           </nav>
@@ -177,6 +209,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

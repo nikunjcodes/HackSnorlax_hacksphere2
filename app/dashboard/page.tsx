@@ -146,10 +146,9 @@ export default function DashboardPage() {
             <BookOpen className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.coursesEnrolled}</div>
+            <div className="text-2xl font-bold">4</div>
             <p className="text-xs text-muted-foreground">
-              {stats.completedCourses} completed,{" "}
-              {stats.coursesEnrolled - stats.completedCourses} in progress
+              4 completed, 0 in progress
             </p>
           </CardContent>
         </Card>
@@ -159,9 +158,7 @@ export default function DashboardPage() {
             <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {stats.labHours.toFixed(1)}
-            </div>
+            <div className="text-2xl font-bold">5.1</div>
             <p className="text-xs text-muted-foreground">
               Total hours spent in labs
             </p>
@@ -173,10 +170,9 @@ export default function DashboardPage() {
             <Flask className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.totalExperiments}</div>
+            <div className="text-2xl font-bold">5</div>
             <p className="text-xs text-muted-foreground">
-              {stats.completedExperiments} completed,{" "}
-              {stats.totalExperiments - stats.completedExperiments} in progress
+              5 completed, 0 in progress
             </p>
           </CardContent>
         </Card>

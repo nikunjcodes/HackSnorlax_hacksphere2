@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 import { StateCreator } from "zustand";
 
 interface User {
@@ -38,7 +38,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 export const useAuth = create<AuthState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       user: null,
       token: null,
       isLoading: false,
@@ -64,6 +64,10 @@ export const useAuth = create<AuthState>()(
 
           const { user, token } = await response.json();
           console.log("Login successful:", { userId: user._id });
+
+          // Store token in localStorage as well
+          localStorage.setItem("token", token);
+
           set({
             user,
             token,
@@ -101,6 +105,10 @@ export const useAuth = create<AuthState>()(
 
           const { user, token } = await response.json();
           console.log("Registration successful:", { userId: user._id });
+
+          // Store token in localStorage as well
+          localStorage.setItem("token", token);
+
           set({
             user,
             token,
@@ -123,10 +131,11 @@ export const useAuth = create<AuthState>()(
         console.log("Logging out...");
         set({ isLoading: true, error: null });
         try {
+          const token = get().token;
           const response = await fetch(`${API_URL}/auth/logout`, {
             method: "POST",
             headers: {
-              Authorization: `Bearer ${useAuth.getState().token}`,
+              Authorization: `Bearer ${token}`,
               "Content-Type": "application/json",
             },
             credentials: "include",
@@ -135,6 +144,9 @@ export const useAuth = create<AuthState>()(
           if (!response.ok) {
             throw new Error("Logout failed");
           }
+
+          // Clear localStorage
+          localStorage.removeItem("token");
 
           set({ user: null, token: null, isLoading: false });
           console.log("Logged out successfully");
@@ -154,7 +166,37 @@ export const useAuth = create<AuthState>()(
     }),
     {
       name: "auth-storage",
-      skipHydration: true,
+      storage: createJSONStorage(() => localStorage),
+      skipHydration: false,
+      partialize: (state) => ({
+        user: state.user,
+        token: state.token,
+      }),
     }
   )
 );
+
+// Add a function to check auth status
+export const checkAuthStatus = async () => {
+  const token = localStorage.getItem("token");
+  if (!token) return;
+
+  try {
+    const response = await fetch(`${API_URL}/auth/me`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.ok) {
+      const { user } = await response.json();
+      useAuth.setState({ user, token });
+    } else {
+      // If the token is invalid, clear everything
+      localStorage.removeItem("token");
+      useAuth.setState({ user: null, token: null });
+    }
+  } catch (error) {
+    console.error("Auth check failed:", error);
+  }
+};

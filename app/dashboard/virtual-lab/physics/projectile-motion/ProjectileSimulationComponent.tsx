@@ -26,7 +26,6 @@ export default function ProjectileSimulationComponent({
     canvasRef.current.width = container.width;
     canvasRef.current.height = container.height;
 
-    // Redraw if simulation exists
     if (canvasRef.current.simulation) {
       canvasRef.current.simulation.drawScene();
     }
@@ -38,7 +37,6 @@ export default function ProjectileSimulationComponent({
     const canvas = canvasRef.current;
     const simulation = new ProjectileSimulation(canvas);
 
-    // Set up target hit callback if provided
     if (onTargetHit) {
       simulation.onTargetHit = onTargetHit;
     }

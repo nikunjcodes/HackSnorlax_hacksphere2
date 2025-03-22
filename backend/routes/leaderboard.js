@@ -1,11 +1,12 @@
 const express = require("express");
 const Leaderboard = require("../models/Leaderboard");
+const User = require("../models/User");
 const { auth } = require("../middleware/auth");
 const logger = require("../utils/logger");
 
 const router = express.Router();
 
-// Get global leaderboard
+// Get global leaderboard with user details
 router.get("/global", auth, async (req, res) => {
   try {
     const { category = "Overall", timeframe = "all" } = req.query;
@@ -13,22 +14,42 @@ router.get("/global", auth, async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    let sortField = "points";
-    if (timeframe === "weekly") sortField = "weeklyPoints";
-    if (timeframe === "monthly") sortField = "monthlyPoints";
+    let sortField = "points.total";
+    if (timeframe === "weekly") sortField = "points.weekly";
+    if (timeframe === "monthly") sortField = "points.monthly";
 
-    const leaderboard = await Leaderboard.find({ category })
+    // Fetch users with their points, sorted by the specified timeframe
+    const users = await User.find({})
+      .select("name institution specialization avatar points achievements")
       .sort({ [sortField]: -1 })
       .skip(skip)
-      .limit(limit)
-      .populate("userId", "name institution avatar");
+      .limit(limit);
 
-    // Get user's rank
+    // Get total count for pagination
+    const totalUsers = await User.countDocuments();
+
+    // Get current user's rank
     const userRank =
-      (await Leaderboard.countDocuments({
-        category,
-        [sortField]: { $gt: req.user.leaderboard?.[sortField] || 0 },
+      (await User.countDocuments({
+        [sortField]: { $gt: req.user.points[timeframe] || 0 },
       })) + 1;
+
+    // Format response
+    const formattedUsers = users.map((user, index) => ({
+      _id: user._id,
+      name: user.name,
+      institution: user.institution,
+      specialization: user.specialization,
+      avatar: user.avatar,
+      rank: skip + index + 1,
+      points: {
+        total: user.points.total,
+        weekly: user.points.weekly,
+        monthly: user.points.monthly,
+        categoryPoints: user.points.categoryPoints,
+      },
+      achievements: user.achievements,
+    }));
 
     logger.info("Leaderboard fetched successfully", {
       category,
@@ -37,12 +58,11 @@ router.get("/global", auth, async (req, res) => {
     });
 
     res.json({
-      leaderboard,
+      users: formattedUsers,
       userRank,
       currentPage: page,
-      totalPages: Math.ceil(
-        (await Leaderboard.countDocuments({ category })) / limit
-      ),
+      totalPages: Math.ceil(totalUsers / limit),
+      totalUsers,
     });
   } catch (error) {
     logger.error("Error fetching leaderboard:", { error: error.message });
@@ -53,42 +73,57 @@ router.get("/global", auth, async (req, res) => {
 // Get institution leaderboard
 router.get("/institution", auth, async (req, res) => {
   try {
-    const { category = "Overall", timeframe = "all" } = req.query;
+    const { timeframe = "all" } = req.query;
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    let sortField = "points";
-    if (timeframe === "weekly") sortField = "weeklyPoints";
-    if (timeframe === "monthly") sortField = "monthlyPoints";
+    let sortField = "points.total";
+    if (timeframe === "weekly") sortField = "points.weekly";
+    if (timeframe === "monthly") sortField = "points.monthly";
 
-    const leaderboard = await Leaderboard.find({
-      category,
-      institution: req.user.institution,
-    })
+    // Fetch users from the same institution
+    const users = await User.find({ institution: req.user.institution })
+      .select("name institution specialization avatar points achievements")
       .sort({ [sortField]: -1 })
       .skip(skip)
-      .limit(limit)
-      .populate("userId", "name avatar");
+      .limit(limit);
+
+    // Get total count for pagination
+    const totalInstitutionUsers = await User.countDocuments({
+      institution: req.user.institution,
+    });
 
     // Get user's institution rank
     const userInstitutionRank =
-      (await Leaderboard.countDocuments({
-        category,
+      (await User.countDocuments({
         institution: req.user.institution,
-        [sortField]: { $gt: req.user.leaderboard?.[sortField] || 0 },
+        [sortField]: { $gt: req.user.points[timeframe] || 0 },
       })) + 1;
 
+    // Format response
+    const formattedUsers = users.map((user, index) => ({
+      _id: user._id,
+      name: user.name,
+      institution: user.institution,
+      specialization: user.specialization,
+      avatar: user.avatar,
+      rank: skip + index + 1,
+      points: {
+        total: user.points.total,
+        weekly: user.points.weekly,
+        monthly: user.points.monthly,
+        categoryPoints: user.points.categoryPoints,
+      },
+      achievements: user.achievements,
+    }));
+
     res.json({
-      leaderboard,
+      users: formattedUsers,
       userInstitutionRank,
       currentPage: page,
-      totalPages: Math.ceil(
-        (await Leaderboard.countDocuments({
-          category,
-          institution: req.user.institution,
-        })) / limit
-      ),
+      totalPages: Math.ceil(totalInstitutionUsers / limit),
+      totalUsers: totalInstitutionUsers,
     });
   } catch (error) {
     logger.error("Error fetching institution leaderboard:", {
@@ -103,37 +138,38 @@ router.post("/update-points", auth, async (req, res) => {
   try {
     const { points, category = "Overall", achievementType } = req.body;
 
-    let leaderboard = await Leaderboard.findOne({
-      userId: req.user._id,
-      category,
-    });
-
-    if (!leaderboard) {
-      leaderboard = new Leaderboard({
-        userId: req.user._id,
-        category,
-        institution: req.user.institution,
-      });
+    // Update user's points
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
     }
 
     // Update points
-    leaderboard.points += points;
-    leaderboard.weeklyPoints += points;
-    leaderboard.monthlyPoints += points;
-    leaderboard.lastUpdated = new Date();
+    user.points.total += points;
+    user.points.weekly += points;
+    user.points.monthly += points;
+
+    // Update category points if specified
+    if (category !== "Overall") {
+      const categoryKey = category.toLowerCase().replace(/\s+/g, "");
+      if (user.points.categoryPoints.hasOwnProperty(categoryKey)) {
+        user.points.categoryPoints[categoryKey] += points;
+      }
+    }
 
     // Add achievement if provided
     if (
       achievementType &&
-      !leaderboard.achievements.includes(achievementType)
+      !user.achievements.some((a) => a.type === achievementType)
     ) {
-      leaderboard.achievements.push(achievementType);
+      user.achievements.push({
+        title: achievementType,
+        description: `Earned ${achievementType} achievement`,
+        type: achievementType,
+      });
     }
 
-    await leaderboard.save();
-
-    // Update ranks for all users in this category
-    await updateRanks(category);
+    await user.save();
 
     logger.info("Points updated successfully", {
       userId: req.user._id,
@@ -141,29 +177,17 @@ router.post("/update-points", auth, async (req, res) => {
       category,
     });
 
-    res.json(leaderboard);
+    res.json(user);
   } catch (error) {
     logger.error("Error updating points:", { error: error.message });
     res.status(500).json({ error: "Error updating points" });
   }
 });
 
-// Helper function to update ranks
-async function updateRanks(category) {
-  const leaderboards = await Leaderboard.find({ category }).sort({
-    points: -1,
-  });
-
-  for (let i = 0; i < leaderboards.length; i++) {
-    leaderboards[i].rank = i + 1;
-    await leaderboards[i].save();
-  }
-}
-
 // Reset weekly points (should be called by a cron job)
 router.post("/reset-weekly", auth, async (req, res) => {
   try {
-    await Leaderboard.updateMany({}, { $set: { weeklyPoints: 0 } });
+    await User.updateMany({}, { $set: { "points.weekly": 0 } });
     logger.info("Weekly points reset successfully");
     res.json({ message: "Weekly points reset successfully" });
   } catch (error) {
@@ -175,7 +199,7 @@ router.post("/reset-weekly", auth, async (req, res) => {
 // Reset monthly points (should be called by a cron job)
 router.post("/reset-monthly", auth, async (req, res) => {
   try {
-    await Leaderboard.updateMany({}, { $set: { monthlyPoints: 0 } });
+    await User.updateMany({}, { $set: { "points.monthly": 0 } });
     logger.info("Monthly points reset successfully");
     res.json({ message: "Monthly points reset successfully" });
   } catch (error) {

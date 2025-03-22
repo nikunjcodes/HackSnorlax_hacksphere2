@@ -2,50 +2,54 @@
 
 import Link from "next/link";
 
-const CoursesPage = () => {
-  const courses = [
-    {
-      title: "Mathematics",
-      description:
-        "Master mathematical concepts through interactive games and exercises. Features addition, subtraction, multiplication, and division practice.",
-      href: "/dashboard/courses/math",
-      icon: "📐",
-      color: "bg-gradient-to-br from-blue-900 to-indigo-900",
-      modules: ["Math Game", "More modules coming soon"],
-      level: "All Levels",
-    },
-    {
-      title: "Chemistry",
-      description:
-        "Explore fundamental concepts in chemistry through interactive lessons, practice problems, and real-world applications.",
-      href: "/dashboard/courses/chemistry",
-      icon: "⚗️",
-      color: "bg-gradient-to-br from-purple-900 to-indigo-900",
-      modules: ["Redox Reactions", "More modules coming soon"],
-      level: "Intermediate",
-    },
-    // More courses can be added here as they are developed
-  ];
+const courses = [
+  {
+    title: "Mathematics",
+    description:
+      "Master mathematical concepts through interactive games and exercises. Features addition, subtraction, multiplication, and division practice.",
+    href: "http://localhost:5173",
+    icon: "📐",
+    color: "bg-gradient-to-br from-blue-900 to-indigo-900",
+    modules: ["Math Game", "More modules coming soon"],
+    level: "All Levels",
+    external: true,
+  },
+  {
+    title: "Chemistry",
+    description:
+      "Explore fundamental concepts in chemistry through interactive lessons, practice problems, and real-world applications.",
+    href: "/dashboard/courses/chemistry",
+    icon: "⚗️",
+    color: "bg-gradient-to-br from-purple-900 to-indigo-900",
+    modules: ["Redox Reactions", "More modules coming soon"],
+    level: "Intermediate",
+    external: false,
+  },
+];
 
+const CoursesPage = () => {
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            Available Courses
-          </h1>
-          <p className="text-xl text-gray-300">
-            Choose from our selection of interactive courses designed to enhance
-            your learning experience
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto text-center mb-12">
+        <h1 className="text-4xl font-bold text-white mb-4">
+          Available Courses
+        </h1>
+        <p className="text-xl text-gray-300">
+          Choose from our selection of interactive courses designed to enhance
+          your learning experience.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
-            <Link
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {courses.map((course, index) => {
+          const CourseLink = course.external ? "a" : Link;
+          return (
+            <CourseLink
               key={index}
               href={course.href}
-              className={`${course.color} rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+              target={course.external ? "_blank" : undefined}
+              rel={course.external ? "noopener noreferrer" : undefined}
+              className={`${course.color} rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl block`}
             >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -92,9 +96,9 @@ const CoursesPage = () => {
                   </svg>
                 </div>
               </div>
-            </Link>
-          ))}
-        </div>
+            </CourseLink>
+          );
+        })}
       </div>
     </div>
   );
