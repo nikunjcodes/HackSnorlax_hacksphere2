@@ -19,8 +19,8 @@ export const THEME = {
   text: "#e2e8f0",
   accent: "#4361ee",
   projectile: "#4895ef",
-  trail: "rgba(72, 149, 239, 0.3)",
-  oldTrail: "rgba(160, 160, 160, 0.2)",
+  trail: "rgba(72, 149, 239, 0.6)",
+  oldTrail: "rgba(160, 160, 160, 0.4)",
   target: "#ff4d6d",
 };
 
@@ -41,6 +41,10 @@ export interface SimulationState {
   maxRangeReached: number;
   showForceVectors: boolean;
   challengeMode: boolean;
+  challengeScore: number;
+  challengeTargetsHit: number;
+  challengeTimeRemaining: number;
+  challengeMaxTime: number;
   trail: { x: number; y: number }[];
   target: {
     x: number;
@@ -76,6 +80,7 @@ export class ProjectileSimulation {
   private startTime: number;
   private trajectoryHistory: Array<Array<{ x: number; y: number }>>;
   public onTargetHit?: () => void;
+  private challengeTimerId: number | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
@@ -100,6 +105,10 @@ export class ProjectileSimulation {
       maxRangeReached: 0,
       showForceVectors: false,
       challengeMode: false,
+      challengeScore: 0,
+      challengeTargetsHit: 0,
+      challengeTimeRemaining: 60,
+      challengeMaxTime: 60,
       trail: [],
       target: {
         x: canvas.width * 0.7,
@@ -638,7 +647,7 @@ export class ProjectileSimulation {
     this.state.projectileX = pos.x;
     this.state.projectileY = pos.y;
 
-    // Update trail
+    // Update trail with darker color
     this.state.trail.push({
       x: this.state.projectileX,
       y: this.state.projectileY,
@@ -654,6 +663,26 @@ export class ProjectileSimulation {
 
     if (!this.state.target.hit && distance < this.state.target.radius) {
       this.state.target.hit = true;
+
+      if (this.state.challengeMode) {
+        // Calculate score based on accuracy and speed
+        const accuracyBonus = Math.max(
+          0,
+          1 - distance / this.state.target.radius
+        );
+        const timeBonus = Math.max(
+          0,
+          this.state.challengeTimeRemaining / this.state.challengeMaxTime
+        );
+        const points = Math.round((accuracyBonus + timeBonus) * 100);
+
+        this.state.challengeScore += points;
+        this.state.challengeTargetsHit++;
+
+        // Generate new target immediately in challenge mode
+        this.generateTarget();
+      }
+
       this.onTargetHit?.();
     }
 
@@ -715,15 +744,20 @@ export class ProjectileSimulation {
   }
 
   private generateTarget(): void {
-    const minDistance = 100;
+    const minDistance = this.state.challengeMode ? 150 : 100;
     const maxDistance = this.canvas.width - 100;
-    const minHeight = this.canvas.height / 4;
+    const minHeight = this.state.challengeMode
+      ? this.canvas.height / 3
+      : this.canvas.height / 4;
     const maxHeight = this.canvas.height - 100;
 
     this.state.target.x =
       Math.random() * (maxDistance - minDistance) + minDistance;
     this.state.target.y = Math.random() * (maxHeight - minHeight) + minHeight;
     this.state.target.hit = false;
+
+    // Make target smaller in challenge mode
+    this.state.target.radius = this.state.challengeMode ? 12 : 15;
   }
 
   private drawTarget(): void {
@@ -775,6 +809,66 @@ export class ProjectileSimulation {
   public setShowForceVectors(show: boolean): void {
     this.state.showForceVectors = show;
     this.drawScene();
+  }
+
+  // Add new methods for challenge mode
+  public startChallengeMode(): void {
+    this.state.challengeMode = true;
+    this.state.challengeScore = 0;
+    this.state.challengeTargetsHit = 0;
+    this.state.challengeTimeRemaining = this.state.challengeMaxTime;
+    this.generateTarget(); // Generate first target
+    this.startChallengeTimer();
+  }
+
+  public stopChallengeMode(): void {
+    this.state.challengeMode = false;
+    if (this.challengeTimerId) {
+      clearInterval(this.challengeTimerId);
+    }
+  }
+
+  private startChallengeTimer(): void {
+    if (this.challengeTimerId) {
+      clearInterval(this.challengeTimerId);
+    }
+
+    this.challengeTimerId = window.setInterval(() => {
+      this.state.challengeTimeRemaining--;
+
+      if (this.state.challengeTimeRemaining <= 0) {
+        this.endChallenge();
+      }
+    }, 1000);
+  }
+
+  private endChallenge(): void {
+    this.stopChallengeMode();
+    // Notify about challenge end with final score
+    if (this.onChallengeEnd) {
+      this.onChallengeEnd({
+        score: this.state.challengeScore,
+        targetsHit: this.state.challengeTargetsHit,
+        timeElapsed: this.state.challengeMaxTime,
+      });
+    }
+  }
+
+  // Add callback for challenge end
+  public onChallengeEnd?: (result: {
+    score: number;
+    targetsHit: number;
+    timeElapsed: number;
+  }) => void;
+
+  // Add method to get challenge state
+  public getChallengeState() {
+    return {
+      isActive: this.state.challengeMode,
+      score: this.state.challengeScore,
+      targetsHit: this.state.challengeTargetsHit,
+      timeRemaining: this.state.challengeTimeRemaining,
+    };
   }
 }
 

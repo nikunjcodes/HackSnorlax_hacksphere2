@@ -1,0 +1,40 @@
+.section {
+  margin-bottom: 2rem;
+}
+
+.formula-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.solution {
+  transition: all 0.3s ease;
+}
+
+.solution.visible {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.solution:not(.visible) {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.practice-problem {
+  margin-bottom: 2rem;
+}
+
+.practice-problem:last-child {
+  margin-bottom: 0;
+}
+
+.concept-card {
+  margin-bottom: 1.5rem;
+}
+
+.concept-card:last-child {
+  margin-bottom: 0;
+}

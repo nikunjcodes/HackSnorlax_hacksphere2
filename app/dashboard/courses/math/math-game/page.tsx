@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import styled from "@emotion/styled";
 
 // Styled Components
@@ -134,17 +134,21 @@ const Button = styled.button`
   }
 `;
 
-const MathsGame = () => {
+interface MathsGameProps {
+  onScoreChange?: (score: number) => void;
+}
+
+const MathsGame = ({ onScoreChange }: MathsGameProps) => {
   const [currentLevel, setCurrentLevel] = useState(0);
   const [unlockedLevels, setUnlockedLevels] = useState([0]);
   const [score, setScore] = useState(1000);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [correctAnswer, setCorrectAnswer] = useState<number | null>(null);
   const [feedback, setFeedback] = useState("");
 
   const generateQuestion = useCallback(() => {
-    let num1, num2, operator;
+    let num1: number, num2: number, operator: string;
     switch (currentLevel) {
       case 0: // Level 1: Addition and Subtraction
         num1 = Math.floor(Math.random() * 100);
@@ -175,6 +179,7 @@ const MathsGame = () => {
     if (userAnswer === correctAnswer) {
       const scoreIncrease = 100;
       setScore((prev) => prev + scoreIncrease);
+      onScoreChange?.(scoreIncrease);
       setFeedback("Correct! 🎉");
 
       if (currentLevel < 2 && !unlockedLevels.includes(currentLevel + 1)) {
@@ -185,6 +190,7 @@ const MathsGame = () => {
     } else {
       const scorePenalty = -50;
       setScore((prev) => prev + scorePenalty);
+      onScoreChange?.(scorePenalty);
       setFeedback("Try again! 😕");
     }
   };
@@ -197,9 +203,9 @@ const MathsGame = () => {
   };
 
   // Initialize first question
-  useState(() => {
+  useEffect(() => {
     generateQuestion();
-  }, []);
+  }, [generateQuestion]);
 
   return (
     <GameContainer>

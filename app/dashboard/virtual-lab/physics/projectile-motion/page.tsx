@@ -1,12 +1,20 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Play, Pause, RefreshCw, Eye, EyeOff } from "lucide-react";
+import {
+  ArrowLeft,
+  Play,
+  Pause,
+  RefreshCw,
+  Eye,
+  EyeOff,
+  Trophy,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import type ProjectileSimulation from "./simulation";
@@ -24,10 +32,17 @@ export default function ProjectileMotionLabPage() {
   const [isLaunched, setIsLaunched] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [targetHits, setTargetHits] = useState(0);
+  const [challengeMode, setChallengeMode] = useState(false);
+  const [challengeState, setChallengeState] = useState({
+    score: 0,
+    targetsHit: 0,
+    timeRemaining: 60,
+  });
 
   const handleSimulationInit = useCallback(
     (simulation: ProjectileSimulation) => {
       simulationRef.current = simulation;
+      simulation.onChallengeEnd = handleChallengeEnd;
       setIsLoading(false);
     },
     []
@@ -35,8 +50,17 @@ export default function ProjectileMotionLabPage() {
 
   const handleTargetHit = useCallback(() => {
     setTargetHits((prev) => prev + 1);
-    // Play a success sound or show a toast notification here if desired
   }, []);
+
+  const handleChallengeEnd = useCallback(
+    (result: { score: number; targetsHit: number; timeElapsed: number }) => {
+      setChallengeMode(false);
+      alert(
+        `Challenge Complete!\nFinal Score: ${result.score}\nTargets Hit: ${result.targetsHit}`
+      );
+    },
+    []
+  );
 
   // Handle simulation controls
   const handleLaunch = () => {
@@ -60,6 +84,18 @@ export default function ProjectileMotionLabPage() {
     const newValue = !showForceVectors;
     simulationRef.current.setShowForceVectors(newValue);
     setShowForceVectors(newValue);
+  };
+
+  const handleToggleChallenge = () => {
+    if (!simulationRef.current) return;
+
+    if (!challengeMode) {
+      simulationRef.current.startChallengeMode();
+      setChallengeMode(true);
+    } else {
+      simulationRef.current.stopChallengeMode();
+      setChallengeMode(false);
+    }
   };
 
   const handleAngleChange = (values: number[]) => {
@@ -87,6 +123,24 @@ export default function ProjectileMotionLabPage() {
     simulationRef.current.setWindSpeed(values[0]);
   };
 
+  // Update challenge state every second
+  useEffect(() => {
+    if (challengeMode && simulationRef.current) {
+      const interval = setInterval(() => {
+        const state = simulationRef.current?.getChallengeState();
+        if (state) {
+          setChallengeState({
+            score: state.score,
+            targetsHit: state.targetsHit,
+            timeRemaining: state.timeRemaining,
+          });
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }
+  }, [challengeMode]);
+
   return (
     <div className="flex flex-col min-h-screen p-6 space-y-6">
       <div className="flex items-center justify-between">
@@ -101,10 +155,24 @@ export default function ProjectileMotionLabPage() {
           <h1 className="text-2xl font-bold">Projectile Motion Lab</h1>
           <Badge variant="secondary">Interactive</Badge>
         </div>
-        <div className="flex items-center gap-2">
-          <Badge variant="outline" className="text-lg">
-            Target Hits: {targetHits}
-          </Badge>
+        <div className="flex items-center gap-4">
+          {challengeMode ? (
+            <>
+              <Badge variant="secondary" className="text-lg">
+                Score: {challengeState.score}
+              </Badge>
+              <Badge variant="secondary" className="text-lg">
+                Targets: {challengeState.targetsHit}
+              </Badge>
+              <Badge variant="destructive" className="text-lg">
+                Time: {challengeState.timeRemaining}s
+              </Badge>
+            </>
+          ) : (
+            <Badge variant="outline" className="text-lg">
+              Target Hits: {targetHits}
+            </Badge>
+          )}
         </div>
       </div>
 
@@ -144,13 +212,20 @@ export default function ProjectileMotionLabPage() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={handleToggleForceVectors}
+                  onClick={() => handleToggleForceVectors()}
                 >
                   {showForceVectors ? (
                     <EyeOff className="h-4 w-4" />
                   ) : (
                     <Eye className="h-4 w-4" />
                   )}
+                </Button>
+                <Button
+                  variant={challengeMode ? "destructive" : "secondary"}
+                  onClick={handleToggleChallenge}
+                >
+                  <Trophy className="mr-2 h-4 w-4" />
+                  {challengeMode ? "End Challenge" : "Challenge Mode"}
                 </Button>
               </div>
 

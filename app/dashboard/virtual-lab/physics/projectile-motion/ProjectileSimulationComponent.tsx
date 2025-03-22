@@ -8,7 +8,6 @@ interface ProjectileSimulationProps {
   onTargetHit?: () => void;
 }
 
-// Extend HTMLCanvasElement to include simulation property
 interface SimulationCanvas extends HTMLCanvasElement {
   simulation?: ProjectileSimulation;
 }
